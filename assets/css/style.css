@@ -21,6 +21,7 @@ body::before {
   content: "";
   position: fixed;
   background: #040404 url("../img/Background.jpg") top right no-repeat;
+  background-color: rgba(0,0,0,0.5);
   background-size: cover;
   left: 0;
   right: 0;
@@ -82,7 +83,7 @@ h6 {
 
 #header h1 a,
 #header h1 a:hover {
-  color: #fff;
+  color: #c98ef1;
   line-height: 1;
   display: inline-block;
 }
@@ -93,7 +94,7 @@ h6 {
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   border-color: #15bb62;
-  color: #fff;
+  color: #c98ef1;
   line-height: 1;
   margin-right: 8px;
   margin-top: 30px;
