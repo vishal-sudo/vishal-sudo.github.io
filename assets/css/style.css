@@ -20,8 +20,9 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/Background.jpg") top right no-repeat;
-  background-color: rgba(0,0,0,0.5);
+  background: #04040400 url("../img/Background.jpg") top right no-repeat;
+  background-color: rgba(0, 0, 0, 0.80);
+  opacity: 0.5;
   background-size: cover;
   background-position: center;
   left: 0;
