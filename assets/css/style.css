@@ -19,7 +19,7 @@ body {
 
 body::before {
   content: "";
-  position: "";
+  position: "fixed";
   background: #040404 url("../img/Background.jpg") top right no-repeat;
   background-color: rgba(0,0,0,0.5);
   background-size: cover;
