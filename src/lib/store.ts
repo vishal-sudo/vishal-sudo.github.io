@@ -71,7 +71,7 @@ const mergeWithDefaults = (stored: Partial<PortfolioData> | undefined): Portfoli
 export const usePortfolioStore = create<PortfolioStore>()(
   persist(
     (set, get) => ({
-      data: userData,
+      data: userData as PortfolioData,
       isAdmin: false,
       setAdmin: (value) => set({ isAdmin: value }),
       
