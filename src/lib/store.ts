@@ -3,6 +3,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { PortfolioData, Skill, Project, Video, Experience, SiteConfig, Social, Certificate, Education, Training, defaultData } from '@/lib/defaultData';
+import userData from '@/lib/userData.json' assert { type: 'json' };
 
 interface PortfolioStore {
   data: PortfolioData;
@@ -35,6 +36,8 @@ interface PortfolioStore {
   importData: (json: string) => void;
   resetData: () => void;
 }
+
+const PortfolioData = userData;
 
 const generateId = () => Math.random().toString(36).substring(2, 15);
 
