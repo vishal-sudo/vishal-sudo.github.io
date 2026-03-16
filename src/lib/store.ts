@@ -37,7 +37,7 @@ interface PortfolioStore {
   resetData: () => void;
 }
 
-const PortfolioData = userData;
+const data = userData as PortfolioData;
 
 const generateId = () => Math.random().toString(36).substring(2, 15);
 
@@ -282,6 +282,8 @@ export const usePortfolioStore = create<PortfolioStore>()(
           },
         })),
       
+
+  
       exportData: () => JSON.stringify(get().data, null, 2),
       
       importData: (json) => {
