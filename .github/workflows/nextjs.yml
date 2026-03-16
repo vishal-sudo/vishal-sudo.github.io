@@ -85,6 +85,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      NEXT_PUBLIC_ADMIN_PASSWORD: ${{ secrets.NEXT_PUBLIC_ADMIN_PASSWORD }}
+      CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL}}
     runs-on: ubuntu-latest
     needs: build
     steps:
