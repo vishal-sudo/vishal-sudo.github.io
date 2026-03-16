@@ -3,7 +3,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { PortfolioData, Skill, Project, Video, Experience, SiteConfig, Social, Certificate, Education, Training, defaultData } from '@/lib/defaultData';
-import userData from '@/lib/userData.json' assert { type: 'json' };
 
 interface PortfolioStore {
   data: PortfolioData;
@@ -37,7 +36,20 @@ interface PortfolioStore {
   resetData: () => void;
 }
 
-const data = userData as PortfolioData;
+const loadInitialData = async () => {
+  try {
+    const res = await fetch('@/lib/userData.json');
+    if (res.ok) {
+      const json = await res.json();
+      return mergeWithDefaults(json);
+    }
+  } catch (e) {
+    console.log('Using default data');
+  }
+  return defaultData;
+};
+// Use in store:
+data: await loadInitialData();
 
 const generateId = () => Math.random().toString(36).substring(2, 15);
 
